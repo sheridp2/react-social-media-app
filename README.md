@@ -1,2 +1,2 @@
 # react-social-media-app
-Social Media app built with React, Redux, Express, and Firebase
+Social Media app built with MongoDB, Express, Node, React, GraphQL, and Node 
