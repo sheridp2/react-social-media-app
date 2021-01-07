@@ -4,6 +4,7 @@
   "description": "Social Media app built with MongoDB, Express, Node, React, GraphQL, and Node",
   "main": "index.js",
   "scripts": {
+    "server": "node index",
     "start": "nodemon index.js"
   },
   "repository": {
