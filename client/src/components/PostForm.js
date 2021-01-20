@@ -12,6 +12,10 @@ function PostForm() {
 
   const [createPost, { error }] = useMutation(CREATE_POST_MUTATION, {
     variables: values,
+    onError(err) {
+      console.log(err);
+    },
+
     update(proxy, result) {
       const data = proxy.readQuery({
         query: FETCH_POSTS_QUERY,
@@ -37,7 +41,7 @@ function PostForm() {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <Form onSubmit={onSubmit}>
         <h2>Create a post:</h2>
         <Form.Field>
@@ -46,13 +50,21 @@ function PostForm() {
             name="body"
             onChange={onChange}
             value={values.body}
+            error={error ? true : false}
           />
           <Button type="submit" color="teal">
             Submit
           </Button>
         </Form.Field>
       </Form>
-    </div>
+      {error && (
+        <div className="ui error message" style={{ marginBottom: 20 }}>
+          <ul className="list">
+            <li>{error.graphQLErrors[0].message}</li>
+          </ul>
+        </div>
+      )}
+    </React.Fragment>
   );
 }
 
