@@ -69,7 +69,9 @@ function SinglePost(props) {
               <Card.Content>
                 <Card.Header>{username}</Card.Header>
                 <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
-                <Card.Description>{body}</Card.Description>
+                <Card.Description style={{ fontSize: 18 }}>
+                  {body}
+                </Card.Description>
               </Card.Content>
               <hr />
               <Card.Content extra>
