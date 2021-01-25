@@ -51,6 +51,7 @@ function SinglePost(props) {
       body,
       createdAt,
       username,
+      userImage,
       comments,
       likes,
       likeCount,
@@ -61,11 +62,7 @@ function SinglePost(props) {
       <Grid>
         <Grid.Row>
           <Grid.Column width={2}>
-            <Image
-              src="https://react.semantic-ui.com/images/avatar/large/molly.png"
-              size="small"
-              float="right"
-            />
+            <Image src={userImage} size="small" float="right" />
           </Grid.Column>
           <Grid.Column width={10}>
             <Card fluid>
@@ -165,6 +162,7 @@ const FETCH_POST_QUERY = gql`
       body
       createdAt
       username
+      userImage
       likeCount
       likes {
         username
