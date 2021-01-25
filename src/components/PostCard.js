@@ -25,13 +25,13 @@ function PostCard({
   return (
     <Card fluid>
       <Card.Content>
-        <Image floated="left" size="tiny" src={userImage} />
+        <Image floated="left" size="mini" src={userImage} />
 
         <Card.Header>{username}</Card.Header>
-        <Card.Meta as={Link} to={`/posts/${id}`}>
-          {moment(createdAt).fromNow(true)}
-        </Card.Meta>
         <Card.Description style={{ fontSize: 18 }}>{body}</Card.Description>
+        <Card.Meta as={Link} to={`/posts/${id}`}>
+          {moment(createdAt).fromNow(true)} ago
+        </Card.Meta>
       </Card.Content>
       <Card.Content extra>
         <LikeButton user={user} post={{ id, likes, likeCount }} />

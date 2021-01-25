@@ -15,8 +15,7 @@ function MenuBar() {
 
   const menuBar = user ? (
     <Menu pointing secondary size="massive" color="teal">
-      <Menu.Item name="Home" active as={Link} to="/" />
-      <Menu.Item name={user.username} />
+      <Menu.Item name="Reacter" active as={Link} to="/" />
 
       <Menu.Menu position="right">
         <Menu.Item name="logout" onClick={logout} />
