@@ -1,6 +1,13 @@
 import React, { useContext } from "react";
 import { useQuery } from "@apollo/client";
-import { Grid, Transition } from "semantic-ui-react";
+import {
+  Grid,
+  Transition,
+  Dimmer,
+  Loader,
+  Image,
+  Segment,
+} from "semantic-ui-react";
 
 import { AuthContext } from "../context/auth";
 import PostCard from "../components/PostCard";
@@ -26,7 +33,11 @@ function Home() {
           </Grid.Column>
         )}
         {loading ? (
-          <h1>Loading posts..</h1>
+          <Grid.Column>
+            <Loader active inline="centered" size="large">
+              Loading posts...
+            </Loader>
+          </Grid.Column>
         ) : (
           <Transition.Group>
             {posts &&
