@@ -13,7 +13,7 @@ export default function UserPage(props) {
     return (
       <div>
         <h1>{user.username}</h1>
-        <Image src={user.userImage} />
+        <img src={user.userImage} />
       </div>
     );
   } else {
