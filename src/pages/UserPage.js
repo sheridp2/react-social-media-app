@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Image } from "semantic-ui-react";
 
 import { AuthContext } from "../context/auth";
 
