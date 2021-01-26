@@ -8,10 +8,9 @@ function MenuBar() {
   const { user, logout } = useContext(AuthContext);
   const pathname = window.location.pathname;
 
-  const path = pathname === "/" ? "Reactor" : pathname.substr(1);
+  const path = pathname === "/" ? "Reactor" : pathname.split("/").pop();
 
   const [activeItem, setActiveItem] = useState(path);
-  console.log(activeItem);
   const handleItemClick = (e, { name }) => setActiveItem(name);
 
   const menuBar = user ? (
@@ -29,12 +28,14 @@ function MenuBar() {
 
       <Menu.Menu position="right">
         <Menu.Item
-          name={`${user.username}`}
-          active={activeItem === `${user.username}`}
+          name={`${user.id}`}
+          active={activeItem === `${user.id}`}
           onClick={handleItemClick}
           as={Link}
-          to={`/${user.username}`}
-        />
+          to={`/user/${user.id}`}
+        >
+          {user.username}
+        </Menu.Item>
         <Menu.Item name="logout" onClick={logout} />
       </Menu.Menu>
     </Menu>
