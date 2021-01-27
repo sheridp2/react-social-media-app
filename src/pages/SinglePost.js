@@ -40,6 +40,10 @@ function SinglePost(props) {
     },
   });
 
+  function goBack() {
+    props.history.push("/");
+  }
+
   function deletePostCallback() {
     props.history.push("/");
   }
@@ -61,10 +65,18 @@ function SinglePost(props) {
     postMarkup = (
       <Grid>
         <Grid.Row>
-          <Grid.Column width={2}>
-            <Image src={userImage} size="small" float="right" />
+          <Grid.Column>
+            <button className="ui button teal" onClick={goBack}>
+              <Icon name="left arrow" />
+              Back
+            </button>
           </Grid.Column>
-          <Grid.Column width={10}>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={3}>
+            <Image src={userImage} size="medium" float="left" />
+          </Grid.Column>
+          <Grid.Column width={13}>
             <Card fluid>
               <Card.Content>
                 <Card.Header>{username}</Card.Header>

@@ -76,6 +76,7 @@ const LOGIN_USER = gql`
       id
       email
       username
+      userImage
       createdAt
       token
     }
